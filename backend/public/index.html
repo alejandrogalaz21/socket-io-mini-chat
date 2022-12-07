@@ -37,6 +37,7 @@
 		integrity="sha512-YeeA/Qxn5hYdkukScTCNNOhTrv1C2RubAGButJ1rmgQwZf/HdRaCGl+JAVkqsqaNRaYNHdheiuKKuPf9mDcqKg=="
 		crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 	<script>
+
 		// selectors
 		const form = document.querySelector('#form')
 		const messagesList = document.querySelector('#messagesList')
@@ -63,7 +64,6 @@
 		socket.on('server-emit-messages', data => {
 			messagesList.innerHTML += `<li>${data.message} - <small>${data.date}</small></li>`
 		})
-
 	</script>
 </body>
 

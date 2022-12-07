@@ -25,7 +25,7 @@ io.on('connection', socket => {
     console.log({ data })
     const { message, date } = data
     // emit messages to all clients
-    socket.emit('server-emit-messages', {
+    io.emit('server-emit-messages', {
       socketId: socket.id,
       message,
       date
