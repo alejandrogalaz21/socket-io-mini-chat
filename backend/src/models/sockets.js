@@ -19,7 +19,7 @@ class Sockets {
         console.log({ data })
         const { message, date } = data
         // emit messages to all clients
-        io.emit('server-emit-messages', {
+        this.io.emit('server-emit-messages', {
           socketId: socket.id,
           message,
           date

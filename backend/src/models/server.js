@@ -18,7 +18,7 @@ class Server {
     this.app.use(express.static(path.join(__dirname, './../../public')))
   }
 
-  socketsConfig() {
+  socketConfig() {
     new Sockets(this.io).socketEvents()
   }
 
@@ -27,7 +27,7 @@ class Server {
     this.middlewareConfig()
 
     // Init Socket's
-    this.socketsConfig()
+    this.socketConfig()
 
     this.server.listen(this.port, () => {
       console.log(`listening on *:${this.port}`)
