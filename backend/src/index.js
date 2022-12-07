@@ -13,7 +13,11 @@ const io = new Server(server)
 app.use(express.static(path.join(__dirname, '../public')))
 
 io.on('connection', socket => {
-  console.log('a user connected')
+  console.log('a user connected :', socket.id)
+  socket.emit('welcome-message', {
+    message: `welcome user you id is : ${socket.id}`,
+    date: new Date()
+  })
 })
 
 server.listen(3000, () => {
